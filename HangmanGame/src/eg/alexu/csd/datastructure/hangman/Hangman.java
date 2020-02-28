@@ -18,7 +18,7 @@ public class Hangman {
 			Random random=new Random();
 			int randomnumber=random.nextInt(secretwordstr.length);
 			MainMethod.secretword=secretwordstr[randomnumber];
-			if((MainMethod.secretword!=null)&&(MainMethod.secretword.matches("^[a-zA-Z]*$"))&&MainMethod.secretword.equals(""))
+			if((MainMethod.secretword!=null)&&(!MainMethod.secretword.matches("^[a-zA-Z]*$"))&&(!MainMethod.secretword.equals("")))
 				throw new Exception("Buggy word");
 			return MainMethod.secretword;
 		} catch (Exception e) {
