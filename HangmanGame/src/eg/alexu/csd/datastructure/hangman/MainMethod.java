@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class MainMethod {
 	public static char [] underscore;
 	public static String secretword,guess=" ";
-	public static int max=5,l;
+	public static int max=20,l;
 	public static void main(String[] args) throws Exception {
 		Hangman hg=new Hangman();
+		try {
 		secretword=hg.selectRandomSecretWord();
 		underscore=new char[secretword.length()];
 		Scanner input=new Scanner(System.in);
@@ -16,7 +17,7 @@ public class MainMethod {
 			System.out.print(a[i]);
 		}
 		System.out.printf("\n");
-	 try{
+	
 	while(guess.compareTo(secretword)!=0) {
 			char c=input.next().charAt(0);
 			guess=hg.guess(c);
