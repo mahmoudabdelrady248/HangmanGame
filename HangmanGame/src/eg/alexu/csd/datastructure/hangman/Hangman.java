@@ -28,13 +28,16 @@ public class Hangman {
 	}
 	public String guess(char c) throws Exception {
 	   char []display=new char [MainMethod.secretword.length()];
-		int k=0;boolean found=false;
+		int k=0;boolean found=false,newline=false;
 		for(int i=0;i<MainMethod.secretword.length();i++)
 			display[i]=MainMethod.secretword.charAt(i);
-		for(MainMethod.l=0;MainMethod.l<MainMethod.secretword.length();MainMethod.l++) {
+		while(MainMethod.l<MainMethod.secretword.length()) {
 		    MainMethod.underscore[MainMethod.l]='-';
 			System.out.printf("%c",MainMethod.underscore[MainMethod.l]);
+			newline=true;MainMethod.l++;
 		}
+		if(newline==true)
+		System.out.printf("\n");
 		while(k<MainMethod.secretword.length()) {
 			if(Character.toLowerCase(c)==Character.toLowerCase(display[k])) {
 				MainMethod.underscore[k]=c;

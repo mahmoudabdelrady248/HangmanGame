@@ -2,7 +2,7 @@ package eg.alexu.csd.datastructure.hangman;
 import java.util.Scanner;
 public class MainMethod {
 	public static char [] underscore;
-	public static String secretword,guess;
+	public static String secretword,guess=" ";
 	public static int max=5,l;
 	public static void main(String[] args) throws Exception {
 		Hangman hg=new Hangman();
@@ -11,11 +11,8 @@ public class MainMethod {
 		Scanner input=new Scanner(System.in);
 		System.out.println("Enter word:");
 	 try{
-		char c=input.next().charAt(0);
-		 guess=hg.guess(c);
-		System.out.println(guess);
-     while(guess.compareTo(secretword)!=0) {
-			c=input.next().charAt(0);
+	while(guess.compareTo(secretword)!=0) {
+			char c=input.next().charAt(0);
 			guess=hg.guess(c);
 			System.out.println(guess);
 			if(guess==null)
