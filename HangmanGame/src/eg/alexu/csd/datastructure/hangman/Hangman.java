@@ -26,18 +26,15 @@ public class Hangman {
 		}
 		return null;
 	}
-	public String guess(char c) throws Exception {
+	public String guess(Character c) throws Exception {
 	   char []display=new char [MainMethod.secretword.length()];
-		int k=0;boolean found=false,newline=false;
+		int k=0;boolean found=false;
 		for(int i=0;i<MainMethod.secretword.length();i++)
 			display[i]=MainMethod.secretword.charAt(i);
 		while(MainMethod.l<MainMethod.secretword.length()) {
 		    MainMethod.underscore[MainMethod.l]='-';
-			System.out.printf("%c",MainMethod.underscore[MainMethod.l]);
-			newline=true;MainMethod.l++;
+			MainMethod.l++;
 		}
-		if(newline==true)
-		System.out.printf("\n");
 		while(k<MainMethod.secretword.length()) {
 			if(Character.toLowerCase(c)==Character.toLowerCase(display[k])) {
 				MainMethod.underscore[k]=c;
@@ -54,7 +51,7 @@ public class Hangman {
 		String string=new String(MainMethod.underscore);
 		return string.toLowerCase();
 	}
-	public void setMaxWrongGuesses(int max)  {
+	public void setMaxWrongGuesses(Integer max)  {
 	  MainMethod.max--;	
 	}
 }

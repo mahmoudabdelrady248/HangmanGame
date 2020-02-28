@@ -10,6 +10,12 @@ public class MainMethod {
 		underscore=new char[secretword.length()];
 		Scanner input=new Scanner(System.in);
 		System.out.println("Enter word:");
+		char[]a=new char[secretword.length()];
+		for(int i=0;i<secretword.length();i++) {
+		    a[i]='-';
+			System.out.print(a[i]);
+		}
+		System.out.printf("\n");
 	 try{
 	while(guess.compareTo(secretword)!=0) {
 			char c=input.next().charAt(0);
