@@ -5,8 +5,8 @@ import java.io.IOException;
 
 public class ReadFile {
 	public String[] ReadFile() throws IOException {
-		BufferedReader br1=new BufferedReader(new FileReader("C:\\Users\\M.Abdelrady\\eclipse-workspace\\HangmanGame\\dictionary.txt"));
-		BufferedReader br2=new BufferedReader(new FileReader("C:\\Users\\M.Abdelrady\\eclipse-workspace\\HangmanGame\\dictionary.txt"));
+		BufferedReader br1=new BufferedReader(new FileReader("C:\\Users\\M.Abdelrady\\git\\HangmanGame\\HangmanGame\\dictionary.txt"));
+		BufferedReader br2=new BufferedReader(new FileReader("C:\\Users\\M.Abdelrady\\git\\HangmanGame\\HangmanGame\\dictionary.txt"));
 		int count=0,i;
 		while(br1.readLine()!=null)
 			count++;

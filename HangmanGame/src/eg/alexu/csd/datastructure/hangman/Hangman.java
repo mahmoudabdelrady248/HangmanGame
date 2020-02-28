@@ -1,5 +1,7 @@
 package eg.alexu.csd.datastructure.hangman;
 import java.util.Random;
+
+
 public class Hangman {
 	public void setDictionary(String[]words) {
 		try {
@@ -16,6 +18,8 @@ public class Hangman {
 			Random random=new Random();
 			int randomnumber=random.nextInt(secretwordstr.length);
 			MainMethod.secretword=secretwordstr[randomnumber];
+			if((MainMethod.secretword!=null)&&(MainMethod.secretword.matches("^[a-zA-Z]*$"))&&MainMethod.secretword.equals(""))
+				throw new Exception("Buggy word");
 			return MainMethod.secretword;
 		} catch (Exception e) {
 			System.out.println("Error!!");
@@ -23,10 +27,14 @@ public class Hangman {
 		return null;
 	}
 	public String guess(char c) throws Exception {
-		char []display=new char [MainMethod.secretword.length()];
+	   char []display=new char [MainMethod.secretword.length()];
 		int k=0;boolean found=false;
 		for(int i=0;i<MainMethod.secretword.length();i++)
 			display[i]=MainMethod.secretword.charAt(i);
+		for(MainMethod.l=0;MainMethod.l<MainMethod.secretword.length();MainMethod.l++) {
+		    MainMethod.underscore[MainMethod.l]='-';
+			System.out.printf("%c",MainMethod.underscore[MainMethod.l]);
+		}
 		while(k<MainMethod.secretword.length()) {
 			if(Character.toLowerCase(c)==Character.toLowerCase(display[k])) {
 				MainMethod.underscore[k]=c;

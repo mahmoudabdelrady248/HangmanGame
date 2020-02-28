@@ -3,22 +3,19 @@ import java.util.Scanner;
 public class MainMethod {
 	public static char [] underscore;
 	public static String secretword,guess;
-	public static int max=5;
+	public static int max=5,l;
 	public static void main(String[] args) throws Exception {
-		Hangman hg=new Hangman();int l;
+		Hangman hg=new Hangman();
 		secretword=hg.selectRandomSecretWord();
 		underscore=new char[secretword.length()];
 		Scanner input=new Scanner(System.in);
 		System.out.println("Enter word:");
-		for(l=0;l<secretword.length();l++) {
-		    underscore[l]='-';
-			System.out.printf("%c",underscore[l]);
-		}
-		char c=input.nextLine().charAt(0);
-		guess=hg.guess(c);
+	 try{
+		char c=input.next().charAt(0);
+		 guess=hg.guess(c);
 		System.out.println(guess);
      while(guess.compareTo(secretword)!=0) {
-			c=input.nextLine().charAt(0);
+			c=input.next().charAt(0);
 			guess=hg.guess(c);
 			System.out.println(guess);
 			if(guess==null)
@@ -34,6 +31,12 @@ public class MainMethod {
 			System.out.println("Sorry!!you lose play again");
 			System.out.printf("The word is %s",secretword);
 		}
+		}
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+		
 		
 	}
-}
+
